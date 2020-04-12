@@ -1,0 +1,89 @@
+body,html{
+    margin: 40px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    background-image: url("https://i.pinimg.com/474x/df/e8/ae/dfe8aedc42159acaf357799f5e964a6a--jimi-hendrix-poster-psychedelic-posters.jpg");
+    
+    font-family: 'Girassol', cursive;
+}
+#quiz-title-box{
+    background-color: #FED608;
+}
+#quiz-title{
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;   
+}
+.question{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #FED608;
+    padding: 20px;
+    margin: 40px;
+}
+.question-text{
+    font-size: 70px;
+    padding: 40px;
+    background-color: #4974B7;
+}
+.question-ans{
+    display: flex;
+    font-size: 2em;
+    background-color: whitesmoke;
+    height: 200px;
+    width: 200px;
+    align-items: center;
+    justify-content: space-around;
+    transition: all 0.3s ease 0s;
+}
+
+
+.answers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px;
+}
+.answers9{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+}
+.question img{
+    height: 180px;
+    width: 180px;
+}
+input[type="button"]{
+    width: 30%;
+    padding: 20px;
+    background-color: #FED608;
+    border-color: #C23C78;
+    border-width: 10px;
+    font-family: 'Girassol', cursive;
+    font-size: 2em;
+    color: #4974B7; 
+    transition: all 0.3s ease 0s;
+}
+
+#submit{
+    text-align: center;
+}
+.results{
+    font-size: 4em;
+    margin: 40px;
+    background-color: #FED608;
+    text-align: center;
+    display: none;
+}
+p{
+    font-size: 2rem;
+}
