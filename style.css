@@ -1,14 +1,21 @@
 body,html{
-    margin: 40px;
+    margin: 8%;
     padding: 0px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-image: url("https://i.pinimg.com/474x/df/e8/ae/dfe8aedc42159acaf357799f5e964a6a--jimi-hendrix-poster-psychedelic-posters.jpg");
-    
+    background-attachment: fixed;
+    background-size: auto;
     font-family: 'Girassol', cursive;
+    scroll-behavior: smooth;
 }
+
 #quiz-title-box{
     background-color: #FED608;
+    border: solid  #FED608;
+    border-width: 10px;
+    width: 125%;
 }
 #quiz-title{
     width: 100%;
@@ -22,6 +29,7 @@ body,html{
     background-color: #FED608;
     padding: 20px;
     margin: 40px;
+    width: 100%;
 }
 .question-text{
     font-size: 70px;
@@ -30,20 +38,30 @@ body,html{
 }
 .question-ans{
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     font-size: 2em;
     background-color: whitesmoke;
     height: 200px;
     width: 200px;
-    align-items: center;
-    justify-content: space-around;
-    transition: all 0.3s ease 0s;
+    transition: all 0.5s ease 0s;
 }
-
-
+.question-ans:hover{
+    transform: rotate(360deg);
+    transition: all 0.5s ease 0s;
+    background-color: #f2cbdd;
+}
+input[type='radio']:checked + .question-ans{
+    transition: all 0.5s ease 0s;
+    background-color: #C23C78;
+}
+input[type='radio']{
+    display: none;
+}
 .answers{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 40px;
 }
 .answers9{
@@ -63,7 +81,7 @@ body,html{
     width: 180px;
 }
 input[type="button"]{
-    width: 30%;
+    width: 100%;
     padding: 20px;
     background-color: #FED608;
     border-color: #C23C78;
@@ -73,17 +91,81 @@ input[type="button"]{
     color: #4974B7; 
     transition: all 0.3s ease 0s;
 }
-
+input[type="button"]:hover{
+    color: #FED608;
+    background-color: #4974B7;
+    transition: all 0.3s ease 0s;
+    transform: scale(1.2);
+}
+.results input[type="button"]{
+    font-size: 25px;
+}
 #submit{
     text-align: center;
 }
+.button-box{
+    width: 50%;
+    align-self: center;
+}
 .results{
-    font-size: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 5em;
     margin: 40px;
+    padding: 40px;
     background-color: #FED608;
     text-align: center;
-    display: none;
+    color: #C23C78;
 }
+.results.fullscreen{
+    z-index: 9999; 
+    width: 95%; 
+    height: 95%; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    margin:0;
+ }
 p{
     font-size: 2rem;
+    color: black;
+}
+/*code to flash text colors https://codepen.io/iPawan/pen/BKkCo */
+.pulse {
+    -webkit-animation: blink 1s infinite;
+            animation: blink 1s infinite;
+}
+@-webkit-keyframes blink { 50% { color: #4974B7; }}
+        @keyframes blink { 50% { color: #4974B7;} }
+
+@media only screen and (max-width: 640px) {
+    
+    #quiz-title-box{
+        width: 90%;
+    }
+    .question{
+        width: 80%;
+    }
+    .question-ans{
+        height: 100px;
+        width: 100px;
+        font-size: smaller;
+    }
+    .question img{
+        height: 85px;
+        width: 85px;
+    }
+    .question-text{
+        font-size: 40px;
+        padding: 40px;
+    }
+    .answers{
+        flex-direction: column;
+        align-items: center;    
+    }
+    .results.fullscreen{
+        width: 90%; 
+        height: 90%; 
+     }
 }

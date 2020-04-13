@@ -1,13 +1,37 @@
+$("#machinegun").hide();
+$("#messagetolove").hide();
+$("#if6was9").hide();
+$("#heartrain").hide();
+$("#voodoochild").hide();
+$("#watchtower").hide();
+$("#purplehaze").hide();
+$("#mojoman").hide();
+$("#jamathouse").hide();
+$("#error").hide();
+
+$('.go-back').on('click', function(e){
+    $("#machinegun").hide();
+    $("#messagetolove").hide();
+    $("#if6was9").hide();
+    $("#heartrain").hide();
+    $("#voodoochild").hide();
+    $("#watchtower").hide();
+    $("#purplehaze").hide();
+    $("#mojoman").hide();
+    $("#jamathouse").hide();
+    $("#error").hide();
+    $("input[type='radio']").each(function(i) {this.checked = false;});
+    window.scrollTo(0,0);
+});
+
 $('#submit-button').on('click', function(e) {
-    // gather all checked radio-button values
+    console.log("i am being clicked");
     var choices = $("input[type='radio']:checked").map(function(i, radio) {
       return $(radio).val();
     }).toArray();
-    // now you have an array of choices = ["valueofradiobox1", "valueofradiobox2", "valueofradiobox2"]
-    // you'll need to do some calculations with this
-    // a naive approach would be to just choose the most common option - seems reasonable
-    console.log(choices.length)
+    console.log(choices.length);
     if (choices.length != 7){
+        console.log("i am showing error");
         $("#error").show();
     }
     else{
@@ -227,34 +251,36 @@ $('#submit-button').on('click', function(e) {
         if (max != 0){
             switch(max){
                 case machinegun:
-                    $("#machinegun").show();
+                    $("#machinegun").show().toggleClass('fullscreen');
                     break;
                 case messagetolove:
-                    $("#messagetolove").show();
+                    $("#messagetolove").show().toggleClass('fullscreen');
                     break;
                 case if6was9:
-                    $("#if6was9").show();
+                    $("#if6was9").show().toggleClass('fullscreen');
                     break;
                 case heartrain:
-                    $("#heartrain").show();
+                    $("#heartrain").show().toggleClass('fullscreen');
                     break;
                 case voodoochild:
-                    $("#voodoochild").show();
+                    $("#voodoochild").show().toggleClass('fullscreen');
                     break;
                 case watchtower:
-                    $("#watchtower").show();
+                    $("#watchtower").show().toggleClass('fullscreen');
                     break;
                 case purplehaze:
-                    $("#purplehaze").show();
+                    $("#purplehaze").show().toggleClass('fullscreen');
                     break;
                 case mojoman:
-                    $("#mojoman").show();
+                    $("#mojoman").show().toggleClass('fullscreen');
                     break;
                 case jamathouse:
-                    $("#jamathouse").show();
+                    $("#jamathouse").show().toggleClass('fullscreen');
                     break;
             }
             $("#error").hide();
         }
     }
+    /*code to scroll to end of window on reveal from Grant Dumanian*/
+    window.scrollTo(0,document.body.scrollHeight);
   });
