@@ -54,9 +54,13 @@ body,html{
 input[type='radio']:checked + .question-ans{
     transition: all 0.5s ease 0s;
     background-color: #C23C78;
+    opacity: 100%;
 }
 input[type='radio']{
     display: none;
+}
+.inputSelectedRemoved + .question-ans{
+    opacity: 50%;
 }
 .answers{
     display: flex;

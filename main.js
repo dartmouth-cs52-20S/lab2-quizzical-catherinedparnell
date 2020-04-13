@@ -1,3 +1,4 @@
+/* Hide all result options */
 $("#machinegun").hide();
 $("#messagetolove").hide();
 $("#if6was9").hide();
@@ -9,6 +10,17 @@ $("#mojoman").hide();
 $("#jamathouse").hide();
 $("#error").hide();
 
+/* When clicked change opacity for all, keep chosen at 100% */
+/* Function from https://teamtreehouse.com/community/change-colour-of-label-when-relevant-radio-button-is-checked */
+$(document).ready(function() {
+    $('input[type="radio"]').click(function() {
+        $label = $(this).parent();
+        $label.parent().parent().find('label').css('opacity', '60%');
+        $label.css('opacity', '100%');
+    });
+});
+
+/* Handles button to refresh quiz after completed */
 $('.go-back').on('click', function(e){
     $("#machinegun").hide();
     $("#messagetolove").hide();
@@ -24,6 +36,7 @@ $('.go-back').on('click', function(e){
     window.scrollTo(0,0);
 });
 
+/* Handles submit/calculations/result */
 $('#submit-button').on('click', function(e) {
     console.log("i am being clicked");
     var choices = $("input[type='radio']:checked").map(function(i, radio) {
