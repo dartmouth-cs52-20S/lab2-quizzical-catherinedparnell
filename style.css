@@ -135,6 +135,11 @@ p{
     font-size: 2rem;
     color: black;
 }
+.results img{
+    height: 40%;
+    width: 30%;
+    align-self: center;
+}
 /*code to flash text colors https://codepen.io/iPawan/pen/BKkCo */
 .pulse {
     -webkit-animation: blink 1s infinite;

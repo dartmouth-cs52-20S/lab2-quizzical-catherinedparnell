@@ -32,7 +32,10 @@ $('.go-back').on('click', function(e){
     $("#mojoman").hide();
     $("#jamathouse").hide();
     $("#error").hide();
-    $("input[type='radio']").each(function(i) {this.checked = false;});
+    $("input[type='radio']").each(function(i) {
+        this.checked = false;
+        $label = $(this).parent();
+        $label.parent().parent().find('label').css('opacity', '100%');});
     window.scrollTo(0,0);
 });
 
